@@ -5,7 +5,7 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
-                    filename='/home/pi/scripts/watering.log',
+                    filename='/var/log/watering.log',
                     filemode='a')
   
 GPIO.setmode(GPIO.BCM)  
