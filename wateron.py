@@ -1,6 +1,12 @@
 #!/usr/bin/python  
 import RPi.GPIO as GPIO  
 import time  
+import logging
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s',
+                    filename='/home/pi/scripts/watering.log',
+                    filemode='a')
   
 GPIO.setmode(GPIO.BCM)  
   
@@ -14,6 +20,7 @@ GPIO.output(7, GPIO.HIGH)
 try:  
   GPIO.output(7, GPIO.LOW)  
   print "Relay Turned On"  
+  logging.info('Watering turned on!')
   #GPIO.cleanup()  
   print "Good bye!"  
   
